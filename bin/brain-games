@@ -3,4 +3,5 @@
 //echo "Welcome to the Brain Games!";
 
 use function BrainGames\Cli\greeting;
+greeting();
 ?>
