@@ -1,0 +1,18 @@
+{
+    "name": "hexlet/code",
+    "description": "study project",
+    "type": "project",
+    "license": "proprietary",
+    "authors": [
+        {   
+            "name": "Nlb9",
+            "email": "ilya080999@gmail.com"
+        }
+    ],
+    "bin": [
+        "bin/brain-games"
+    ],
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.14"
+    }
+}
