@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
-//echo "Welcome to the Brain Games!";
+
+require_once 'vendor/autoload.php';
 
 use function BrainGames\Cli\greeting;
 greeting();
-?>
