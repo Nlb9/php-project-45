@@ -12,5 +12,5 @@ function even()
     line("Question: %d", $number);
     $answer = prompt("Your answer");
     
-    ($answer === $isEven) ? line("Correct!") : line("$answer is wrong answer ;(. Correct answer was $isEven.\nLet's try again!");
+    return ($answer === $isEven) ? line("Correct!") : line("$answer is wrong answer ;(. Correct answer was $isEven.\nLet's try again!");
 }
