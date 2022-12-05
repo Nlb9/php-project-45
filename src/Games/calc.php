@@ -1,24 +1,27 @@
 <?php
+
 namespace BrainGames\Games;
 
-use function cli\line;
-use function cli\prompt;
+use function BrainGames\Engine\coreLogic;
 
 function calc()
 {
-    $number1 = rand(0, 100);
-    $number2 = rand(0, 100);
-    $calcOper = ['+', '-', '*'];
-    $index = array_rand($calcOper);
-    $calcRes = [
-                '+' => $number1 + $number2, 
-                '-' => $number1 - $number2,
-                '*' => $number1 * $number2
-            ];
-    $sign = $calcOper[$index];
+    $funkValues = function () {
+        $number1 = rand(0, 100);
+        $number2 = rand(0, 100);
+        $calcOper = ['+', '-', '*'];        // набор мат. операций
+        $index = array_rand($calcOper);     // случайный индекс из имеющегося массива
+        $sign = $calcOper[$index];          // имея случайный индекс берем из массива мат. оператор
+        $calcRes = [
+            '+' => $number1 + $number2,     //      \
+            '-' => $number1 - $number2,     //        --- просчитаные варианты операций в ассоциатовном массиве
+            '*' => $number1 * $number2      //      /
+        ];
+        $answer = $calcRes[$sign];          // подставляем опретор в ассоциативный массив
+        $question = "$number1 $sign $number2";
 
-    line("Question: $number1 $sign $number2");
-    $answer = prompt("Your answer");
-    
-    return ($answer == $calcRes[$sign]) ? line("Correct!") : line("$answer is wrong answer ;(. Correct answer was $calcRes[$sign].\nLet's try again!");
+        return [$question, $answer];
+    };
+    coreLogic($funkValues);
 }
+

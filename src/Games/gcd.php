@@ -2,9 +2,7 @@
 
 namespace BrainGames\Games;
 
-use function cli\line;
-use function cli\prompt;
-
+use function BrainGames\Engine\coreLogic;
 
 function gcd(int $a, int $b)
 {
@@ -17,13 +15,13 @@ function gcd(int $a, int $b)
 
 function gcdPlay()
 {
-    $number1 = rand(0, 100);
-    $number2 = rand(0, 100);
+    $funkValues = function () {
+        $number1 = rand(0, 100);
+        $number2 = rand(0, 100);
+        $answer = gcd($number1, $number2);
+        $question = "$number1  $number2";
 
-    $rightAnswer = gcd($number1, $number2);
-
-    line("Question: $number1  $number2");
-    $number1nswer = prompt("Your answer");
-
-    return ($number1nswer == $rightAnswer) ? line("Correct!") : line("$number1nswer is wrong answer ;(. Correct answer was $rightAnswer.\nLet's try again!");
+        return [$question, $answer];
+    };
+    coreLogic($funkValues);
 }

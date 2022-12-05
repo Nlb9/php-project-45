@@ -1,16 +1,17 @@
 <?php
+
 namespace BrainGames\Games;
 
-use function cli\line;
-use function cli\prompt;
+use function BrainGames\Engine\coreLogic;
 
 function even()
 {
-    $number = rand(0, 100);
-    $isEven = $number%2 === 0 ? "yes" : "no";
+    $funkValues = function () {
+        $number = rand(0, 100);
+        $answer = $number % 2 === 0 ? "yes" : "no";
+        $question = "$number";
 
-    line("Question: %d", $number);
-    $answer = prompt("Your answer");
-    
-    return ($answer === $isEven) ? line("Correct!") : line("$answer is wrong answer ;(. Correct answer was $isEven.\nLet's try again!");
+        return [$question, $answer];
+    };
+    coreLogic($funkValues);
 }

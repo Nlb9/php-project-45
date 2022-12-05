@@ -26,7 +26,8 @@
             "src/Cli.php",
             "src/Games/even.php",
             "src/Games/calc.php",
-            "src/Games/gcd.php"
+            "src/Games/gcd.php",
+            "src/Engine.php"
         ]
     }
 }
