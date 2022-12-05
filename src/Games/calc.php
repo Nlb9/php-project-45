@@ -8,8 +8,8 @@ function calc()
 {
     $number1 = rand(0, 100);
     $number2 = rand(0, 100);
-    $index = rand(1, 3);
     $calcOper = ['+', '-', '*'];
+    $index = array_rand($calcOper);
     $calcRes = [
                 '+' => $number1 + $number2, 
                 '-' => $number1 - $number2,
