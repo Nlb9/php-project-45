@@ -11,11 +11,11 @@ brain_even:
 brain_calc:
 	./bin/brain-calc
 
-brain-gcd:
-	.bin/brain-gcd
+brain_gcd:
+	./bin/brain-gcd
 
-brain-progression:
-	.bin/brain-progression
+brain_progression:
+	./bin/brain-progression
 
 validate:
 	composer validate
