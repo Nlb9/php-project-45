@@ -18,7 +18,7 @@ function coreLogic(string $desription, callable $funkValues)
         if ($playerAnswer == $answer) {
             line('Correct!');
         } else {
-            line("$playerAnswer is wrong answer ;(. Correct answer was $answer. \nLet's try again $name!");
+            line("$playerAnswer is wrong answer ;(. Correct answer was $answer. \nLet's try again, $name!");
             return;
         }
     }
