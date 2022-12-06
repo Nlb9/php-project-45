@@ -19,6 +19,7 @@ function arrGenerate()
 
 function progression()
 {
+    $desription = "What number is missing in the progression?";
     $funkValues = function () {
         $progression = arrGenerate();                           // заполняем массив
         $index = array_rand($progression);                      // берем случайный индекс
@@ -28,5 +29,5 @@ function progression()
         $question = implode(' ', $swapped);                     // переводим итоговый массив в строку
         return [$question, $answer];
     };
-    coreLogic($funkValues);
+    coreLogic($desription, $funkValues);
 }

@@ -6,6 +6,7 @@ use function BrainGames\Engine\coreLogic;
 
 function even()
 {
+    $desription = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
     $funkValues = function () {
         $number = rand(0, 100);
         $answer = $number % 2 === 0 ? "yes" : "no";
@@ -13,5 +14,5 @@ function even()
 
         return [$question, $answer];
     };
-    coreLogic($funkValues);
+    coreLogic($desription, $funkValues);
 }

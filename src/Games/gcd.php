@@ -15,6 +15,7 @@ function gcd(int $a, int $b)
 
 function gcdPlay()
 {
+    $desription = "Find the greatest common divisor of given numbers.";
     $funkValues = function () {
         $number1 = rand(0, 100);
         $number2 = rand(0, 100);
@@ -23,5 +24,5 @@ function gcdPlay()
 
         return [$question, $answer];
     };
-    coreLogic($funkValues);
+    coreLogic($desription, $funkValues);
 }

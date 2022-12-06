@@ -6,10 +6,10 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Cli\greeting;
 
-function coreLogic(callable $funkValues)
+function coreLogic(string $desription, callable $funkValues)
 {
     $name = greeting();
-
+    line($desription);
     for ($correctAnswer = 1; $correctAnswer <= 3; $correctAnswer++) {
         [$question, $answer] = $funkValues();
         line("Question: $question");
