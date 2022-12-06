@@ -5,7 +5,7 @@ namespace BrainGames\Games;
 use function BrainGames\Engine\coreLogic;
 
 function calc()
-{  
+{
     $desription = "What is the result of the expression?";
     $funkValues = function () {
         $number1 = rand(0, 100);
@@ -25,4 +25,3 @@ function calc()
     };
     coreLogic($desription, $funkValues);
 }
-
