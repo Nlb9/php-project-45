@@ -22,5 +22,5 @@ function coreLogic(string $desription, callable $funkValues)
             return;
         }
     }
-    line("Congratulations!, $name");
+    line("Congratulations, $name!");
 }
