@@ -4,9 +4,12 @@ namespace BrainGames\Engine;
 
 use function cli\line;
 use function cli\prompt;
+use function BrainGames\Cli\greeting;
 
 function coreLogic(callable $funkValues)
 {
+    $name = greeting();
+
     for ($correctAnswer = 1; $correctAnswer <= 3; $correctAnswer++) {
         [$question, $answer] = $funkValues();
         line("Question: $question");
@@ -15,9 +18,9 @@ function coreLogic(callable $funkValues)
         if ($playerAnswer == $answer) {
             line('Correct!');
         } else {
-            line("$playerAnswer is wrong answer ;(. Correct answer was $answer. \nLet's try again");
-            break;
+            line("$playerAnswer is wrong answer ;(. Correct answer was $answer. \nLet's try again $name");
+            return;
         }
     }
-    line("Congratulations!");
+    line("Congratulations!, $name");
 }
