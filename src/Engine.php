@@ -11,6 +11,13 @@ function coreLogic(callable $funkValues)
         [$question, $answer] = $funkValues();
         line("Question: $question");
         $playerAnswer = prompt('Your answer');
-        $playerAnswer == $answer ? line('Correct!') : line("$playerAnswer is wrong answer ;(. Correct answer was $answer. \nLet's try again");
+
+        if ($playerAnswer == $answer) {
+            line('Correct!');
+        } else {
+            line("$playerAnswer is wrong answer ;(. Correct answer was $answer. \nLet's try again");
+            break;
+        }
     }
+    line("Congratulations!");
 }

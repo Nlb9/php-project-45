@@ -14,10 +14,10 @@ function calc()
         $sign = $calcOper[$index];          // имея случайный индекс берем из массива мат. оператор
         $calcRes = [
             '+' => $number1 + $number2,     //      \
-            '-' => $number1 - $number2,     //        --- просчитаные варианты операций в ассоциатовном массиве
+            '-' => $number1 - $number2,     //        --- просчитаные варианты операций в ассоциативном массиве
             '*' => $number1 * $number2      //      /
         ];
-        $answer = $calcRes[$sign];          // подставляем опретор в ассоциативный массив
+        $answer = $calcRes[$sign];          // подставляем оператор в ассоциативный массив
         $question = "$number1 $sign $number2";
 
         return [$question, $answer];
