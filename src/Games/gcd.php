@@ -20,7 +20,7 @@ function gcdPlay()
         $number1 = rand(0, 100);
         $number2 = rand(0, 100);
         $answer = gcd($number1, $number2);
-        $question = "$number1  $number2";
+        $question = "$number1 $number2";
 
         return [$question, $answer];
     };
